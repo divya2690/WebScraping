@@ -1,0 +1,10 @@
+C:\Users\DELL>node scrap.js
+{
+  dateofPublication: 'DATA DA PUBLICAÇÃO: 02/02/2021',
+  biddingdate: '18/02/2021',
+  object: 'Registro de Preços pelo prazo de 12 meses, para aquisição de grampo galvanizado.',
+  link_1: 'http://portal6.pbh.gov.br/dom/iniciaEdicao.do?method=DetalheArtigo&pk=1235349',
+  link_2: 'https://www.licitacoes-e.com.br/aop/consultar-detalhes-licitacao.aop?numeroLicitacao=852045&opcao=consultarDetalhesLicitacao',
+  link_3: 'http://portal6.pbh.gov.br/dom/iniciaEdicao.do?method=DetalheArtigo&pk=1241350',
+  link_4: 'http://portal6.pbh.gov.br/dom/iniciaEdicao.do?method=DetalheArtigo&pk=1239614'
+}
