@@ -1,0 +1,50 @@
+async function scrapeProduct(url){
+	try{
+	const browser = await puppeteer.launch({ headless: false });
+	const page = await browser.newPage();
+	await page.goto(url);
+	
+	const[dp] = await page.$x('/html/body/div[1]/div/div[5]/div/div/div/div/div[1]/div/div/div/div[3]/div/div/div/div/div/div[2]/span/span[1]');
+	const date1 = await dp.getProperty('textContent');
+	const dateofPublication = await date1.jsonValue();
+	
+	const[bd] = await page.$x('/html/body/div[1]/div/div[5]/div/div/div/div/div[1]/div/div/div/div[3]/div/div/div/div/div/div[2]/span/span[6]/text()');
+	const bd1 = await bd.getProperty('textContent');
+	const biddingdate = await bd1.jsonValue();
+	
+	const[od] = await page.$x('/html/body/div[1]/div/div[5]/div/div/div/div/div[1]/div/div/div/div[3]/div/div/div/div/div/div[2]/span/p[1]');
+	const od1 = await od.getProperty('textContent');
+	const object = await od1.jsonValue();
+	
+	const[links] = await page.$x('/html/body/div[1]/div/div[5]/div/div/div/div/div[1]/div/div/div/div[3]/div/div/div/div/div/div[3]/div/table/tbody/tr[1]/td[2]/div/div/div/a');
+	const link1 = await links.getProperty('href');
+	const link_1 = await link1.jsonValue();
+	
+
+	
+	const[links2] = await page.$x('//*[@id="block-views-block-view-noticia-pbh-block-5"]/div/div/div/div/div/div[3]/div/table/tbody/tr[3]/td[2]/div/div/div/a');
+	const link2 = await links2.getProperty('href');
+	const link_2 = await link2.jsonValue();
+	
+	
+	const[link3] = await page.$x('//*[@id="block-views-block-view-noticia-pbh-block-5"]/div/div/div/div/div/div[3]/div/table/tbody/tr[4]/td[2]/div/div/div/a');
+	const links3 = await link3.getProperty('href');
+	const link_3 = await links3.jsonValue();
+	
+	
+	const[link4] = await page.$x('//*[@id="block-views-block-view-noticia-pbh-block-5"]/div/div/div/div/div/div[3]/div/table/tbody/tr[2]/td[2]/div/div/div/a');
+	const links4 = await link4.getProperty('href');
+	const link_4 = await links4.jsonValue();
+	
+	
+
+	
+console.log({dateofPublication,biddingdate,object,link_1,link_2,link_3,link_4});
+	
+	browser.close();
+	
+	
+	
+}catch(err){console.log(err);}}
+	
+scrapeProduct('https://prefeitura.pbh.gov.br/saude/licitacao/pregao-eletronico-151-2020');
