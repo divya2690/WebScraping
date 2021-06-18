@@ -47,4 +47,5 @@ console.log({dateofPublication,biddingdate,object,link_1,link_2,link_3,link_4});
 	
 }catch(err){console.log(err);}}
 	
+
 scrapeProduct('https://prefeitura.pbh.gov.br/saude/licitacao/pregao-eletronico-151-2020');
